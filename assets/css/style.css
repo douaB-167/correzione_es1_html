@@ -13,16 +13,25 @@ body {
     line-height: 1.47; /* spaazio tra le righe di un paragrafo, esprime un rapporto, che rende più leggibile il testo */ 
     font-size: 100%;
 }
-
-.container{
-    width: 1170px;
-    margin: 0 auto; /* lo centra automaticamente */
+.container {
+    width: 100%;
+    margin: 0 auto;
+    /* lo centra automaticamente */
     padding-left: 1rem;
     padding-right: 1rem;
 }
 
+.container-main {
+    min-height: calc(100vh - 55.52px); /* 100% dell'altezza del viewport */
+}
+
 h1, h2, h3, h4, h5, h6 {
     color: var(--primary);
+    margin-top: 0;
+}
+
+figure {
+    margin: 0;
 }
 
 a:link {
@@ -48,6 +57,15 @@ a.nav-item:hover, a.active{
     color: var(--primary);
 }
 
+iframe {
+    width: 100%;
+    border: 0;
+}
+
+figcaption {
+    font-size: .875rem;
+}
+
 .bg-nav {
     background-color: var(--primary);
 }
@@ -61,6 +79,10 @@ a.nav-item:hover, a.active{
 }
 
 /* SFONDO PER TUTTI I FIGLI ENNESIMI PARI */
+.section-bg {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
 .section-bg:nth-child(even){
     background-color: #efefef;
 }
@@ -88,16 +110,13 @@ table td:nth-child(2){
     text-align: right;
 }
 
-.overflow-hidden{
-    overflow: hidden;
-}
-
-/* GRIGLIA */
-.row{
-    display: flex; /* mododimensinale, tutto in riga */
+/* griglia */
+.row {
+    display: flex;
     flex-wrap: wrap;
-    padding-left: -1rem;
-    padding-right: -1rem;
+    margin-right: -16px;
+    margin-left: -16px;
+    row-gap: 1rem;
 }
 
 /* 100%/12=8.33% */
@@ -168,12 +187,13 @@ table td:nth-child(2){
 }
 
 .ul-list {
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 0;
     padding-left: 0;
     list-style-type: none;
 }
 
-.list-item {
+.container-sub-list {
     text-align: center;
     border: 2px solid var(--primary);
     padding: 2rem 1rem;
@@ -181,13 +201,35 @@ table td:nth-child(2){
     font-size: 1.5rem;
 }
 
-input[type="submit"] {
-    background-color: #0755c8;
-    color: #efefef;
-    padding: 10px;
-    border: 0 none;
+.form-group {
+    margin-bottom: 1rem;
 }
 
-.form {
-    padding-left: 300px;
+.form-group input {
+    border: 1px solid lightgray;
+    padding: 8px 6px;
+    font-size: 1rem;
+    border-radius: 4px;
 }
+
+.form-group .label {
+    font-weight: bold;
+    font-size: .875rem;
+    display: block;
+}
+
+/* body {
+    background-color: #828080;
+}
+
+@media (min-width: 576px) {
+    body {
+        background-color: #4c3434;
+    }
+}
+
+@media (min-width: 998px) {
+    body {
+        background-color: #140202;
+    }
+} */
